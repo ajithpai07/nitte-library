@@ -3,6 +3,7 @@
     <head>
         <title>Login</title>
         <meta charset="UTF-8">
+        
         <link rel="icon" type="image/icon type" href="\logo_tbar.png">
         <link rel="stylesheet" href="css/css3.css">
     </head>
@@ -17,14 +18,14 @@
             </div>
         </div>
         <div class="main">
-            <form>
-                <input class="un" type="text" align="center" placeholder="Username">
-                <input class="pass" type="password" align="center" placeholder="Password">
+            <form id="login">
+                <input class="un" type="text" align="center" id="email" placeholder="Username">
+                <input type="password" class="pass"  align="center" id="password" placeholder="Password" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeydown="if(event.ctrlKey && event.keyCode==86){return false;}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                 <input type="submit" value="LOGIN" class="submit">
             </form>            
             <a class="login-links-left" href="#">Forgot Password</a>
             <a class="login-links-right" href="registerform.html">New User? Sign Up</a>
-            <a class="glow-on-hover" href="index1.html">Other Login Options</a>
+            <a class="glow-on-hover" type="button" href="index1.html">Other Login Options</a>
         </div>
         <div class="footer">
             <div class="footer-cright">
@@ -41,5 +42,13 @@
                 </address>
             </div>
         </div>
+     
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+
+    <script src="js/login.js"></script>
     </body>
 </html>
