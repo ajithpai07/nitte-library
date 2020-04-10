@@ -3,10 +3,23 @@
     <head>
         <title>Register</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/icon type" href="\logo_tbar.png">
+        <link rel="icon" type="image/icon type" href="logo_tbar.png">
         <link rel="stylesheet" href="css/css7.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>
+            $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            });
+        </script> 
+
     </head>
     <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
         <div class="header">
             <div class="header-logo">Takshashila Library</div>
             <div class="header-menu">
@@ -21,69 +34,73 @@
                 <fieldset>
                   <legend><span class="number">1</span>Basic details</legend>
                   <label>Name</label>
-                  <input type="text" class="slct" id="name" required>
+                  <input type="text" class="slct" id="name" required pattern="[a-zA-Z|' ']{3,30}" title="Sorry, only letters and spaces are allowed with a maximum length of 3-30 letters.">
                   <label>Date Of Birth</label>
                   <input type="date" class="slct" id="Dob" required>
                   <label>E-mail</label>
-                  <input type="email" class="slct" id="email" required>
+                  <input type="email" class="slct" id="email" required pattern="[a-zA-Z0-9|.]+@[a-zA-z]+[.][a-zA-Z]+" title="Sorry, only letters, numbers, periods(.) are allowed.">
                   <label>Phone Number</label>
-                  <input type="number" class="slct" id="phno" required>  
+                  <input type="text" class="slct" id="phno" required pattern="[6-9]{1}[0-9]{9}" title="Sorry, only numbers starting with 6,7,8,9 are allowed. Maintain the length of 10.">  
                   <label>New Password</label>
-                  <input type="password" class="slct" id="password" required>
+                  <input type="password" class="slct" id="password" required pattern="(?=.*\d).{8,16}" title="Sorry, password must be of 8 to 16 characters including atleast one in each category: uppercase, lowercase, number and special character.">
+                  <label>Upload Your Selfie</label>
+                  <input type="file" class="slct-img" accept="image/*" required>
                 </fieldset>          
                            
                 <fieldset>
                     <legend><span class="number">2</span>Address details</legend>
-                    <label>Door No</label>
-                    <input type="text" class="slct" id="dno" required>
+                    <label>Door/Flat number</label>
+                    <input type="text" class="slct" id="dno" required pattern="[A-Za-z0-9]+[A-Za-z0-9|' '|-]*" title="Example: E-503, 1-808-1A.">
                     <label>Street name</label>
-                    <input type="text" class="slct" id="strtname" required>
+                    <input type="text" class="slct" id="strtname" required pattern="[A-Za-z0-9|' '|-]+" title="Example: Central Jail Road, John Street-1.">
                     <label>City</label>
-                    <input type="text" class="slct" id="City" required>
+                    <input type="text" class="slct" id="City" required pattern="[A-Za-z|' ']+" title="Sorry, only letters and spaces are allowed.">
                     <label>Postal code</label>
-                    <input type="text" class="slct" id="pcode" pattern=".{6}" required title="Exactly 6 digits are required">
+                    <input type="text" class="slct" id="pcode" pattern="[1-9]{1}[0-9]{5}" required title="Sorry, only 6 digits without spaces are allowed.">
                   </fieldset>
 
                 <fieldset>
                     <legend><span class="number">3</span>Book preferences</legend>
                     <label>Preference - 1</label>
                     <select class="slct" id="p1" required>
-                        <option value="historical fiction">Historical fiction</option>
-                        <option value="science fiction">Science fiction</option>
-                        <option value="short story">Short story</option>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="horror">Horror</option>
-                        <option value="poetry">Poetry</option>
-                        <option value="satire">Satire</option>
-                        <option value="travel">Travel</option>
-                        <option value="drama">Drama</option>
-                        <option value="art">Art</option>
+                        <option value="Art">Art</option>
+                        <option value="Music">Music</option>
+                        <option value="Poetry">Poetry</option>
+                        <option value="Humour">Humour</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Business">Business</option>
+                        <option value="Biography">Biography</option>
+                        <option value="Cookbooks">Cookbooks</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Young Adult">Young Adult</option>
                     </select>
                     <label>Preference - 2</label>
                     <select class="slct" id="p2">
-                        <option value="historical fiction">Historical fiction</option>
-                        <option value="science fiction">Science fiction</option>
-                        <option value="short story">Short story</option>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="horror">Horror</option>
-                        <option value="poetry">Poetry</option>
-                        <option value="satire">Satire</option>
-                        <option value="travel">Travel</option>
-                        <option value="drama">Drama</option>
-                        <option value="art">Art</option>
+                        <option value="">-</option>
+                        <option value="Art">Art</option>
+                        <option value="Music">Music</option>
+                        <option value="Poetry">Poetry</option>
+                        <option value="Humour">Humour</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Business">Business</option>
+                        <option value="Biography">Biography</option>
+                        <option value="Cookbooks">Cookbooks</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Young Adult">Young Adult</option>
                     </select>
                     <label>Preference - 3</label>
                     <select class="slct" id="p3">
-                        <option value="historical fiction">Historical fiction</option>
-                        <option value="science fiction">Science fiction</option>
-                        <option value="short story">Short story</option>
-                        <option value="fantasy">Fantasy</option>
-                        <option value="horror">Horror</option>
-                        <option value="poetry">Poetry</option>
-                        <option value="satire">Satire</option>
-                        <option value="travel">Travel</option>
-                        <option value="drama">Drama</option>
-                        <option value="art">Art</option>
+                        <option value="">-</option>
+                        <option value="Art">Art</option>
+                        <option value="Music">Music</option>
+                        <option value="Poetry">Poetry</option>
+                        <option value="Humour">Humour</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Business">Business</option>
+                        <option value="Biography">Biography</option>
+                        <option value="Cookbooks">Cookbooks</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Young Adult">Young Adult</option>
                     </select>
                 </fieldset>      
                 
@@ -92,11 +109,11 @@
                     <label>KYC document type</label>
                     <select class="slct" id="KYCtype" required>
                         <option value="aadhaar">Aadhaar card</option>
-                        <option value="pan">PAN card</option>
-                        <option value="driving license">Driving license</option>
+                        <!--<option value="pan">PAN card</option>
+                        <option value="driving license">Driving license</option>-->
                     </select>
                     <label>KYC id number</label>
-                    <input type="text" class="slct" id="Kycid" required>
+                    <input type="text" class="slct" id="Kycid" required pattern="[0-9]{12}" title="Aadhaar Card identification number is of 12 digits." class="slct">
                     <!-- <label for="img">KYC image</label>
                     <input type="file" class="slct-img" id="Kycimg" accept="image/*"> -->
                 </fieldset> 
@@ -120,6 +137,13 @@
                 </address>
             </div>
         </div>
+
+<!-- <script>
+    function fiveseconds() {
+    setInterval(function(){clock()},5000);
+    window.location="8_clogin.html";
+} -->
+</script>
 
 <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 

@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Profile Management</title>
+        <title>Profile Management: KYC</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/icon type" href="file:///C:/Users/Sravan%20Kumar/Desktop/takshashila-lib/logo_tbar.png">
-        <link rel="stylesheet" href="css/css4.css">
+        <link rel="icon" type="image/icon type" href="logo_tbar.png">
+        <link rel="stylesheet" href="css/css4kyc.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>
+            $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+        <!-- logout script -->
+        <script>
+            function logoutfunction() {
+              var r = confirm("Are you sure want to logout?");
+              if (r == true) {
+                window.location.href = "8_clogout.html";
+              }
+            }
+        </script>
+        <!-- logout script -->
+        
     </head>
     <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
         <div class="header">
             <div class="header-logo">Takshashila Library</div>
             <div class="header-menu">
                 <ul>
-                    <li><a href="logout.html" class="button button3">Logout</a></li>
-                    <li><a href="6_booking.html">Booking</a></li>
+                    <li><a onclick="logoutfunction()" class="button3">Logout</a></li>
+                    <li><a href="6_cart.html">Booking</a></li>
                     <li><a href="5_wallet.html">Wallet</a></li>
                     <li class="active"><a href="4_2_profilem.html">Profile management</a></li>
                     <li><a href="2_home.html">Home</a></li>
@@ -25,30 +48,61 @@
                 <a href="4_3_profilem.html">Update My Profile</a>
                 <a href="4_4_profilem.html">KYC Status</a>
                 <a href="4_1_profilem.html">Help</a>
-            </div>                      
-            <div class="main-profile">
-                <h2>KYC Status</h2><br>
-                <h3>Status: <span>Pending</span></h3>
-                <p>What are the requirements of the documents to be submitted for KYC?<br><br>
-                    Selfie<br>
-                    - Photo of yourself, with your entire face visible.<br>
-                    - Remove any accessories such as glasses when taking your picture.<br>
-                    - The photo should be well lit and in focus.<br>
-                    - The photo of an existing picture or computer screen is not suitable.<br><br>
-                    Proof of Identity<br>
-                    - Identification documents can be one of the following: ID card, passport or driving license.<br>
-                    - The document should include full name, date of birth and a picture of yourself.<br>
-                    - The photo should cover the full document and clearly show the required information.<br>
-                    - The photo should be well lit and in focus.<br><br>
-                    Proof of Address<br>
-                    - Proof of address document can be one of the following: bank/credit card statement or a utility bill.<br>
-                    - Electricity, Gas, Landline and Water utility bills are acceptable. GSM, TV/Satellite, Internet utility bills are NOT suitable.<br>
-                    - The document should include full name, address, document date and name of the issuer.<br>
-                    - The document should be issued within three months of the current date.<br>
-                    - The photo should cover the full document and clearly show the required information.<br>
-                    - The photo should be well lit and in focus.<br></p>
+            </div>  
+            <div class="show-profile" id="profile">
+                <h2>KYC Status</h2>    
+
+                <h5>Status: <span>Pending</span></h5>                
+               
+                <h3 id="fld1">Name:<br>
+                </h3>
+                <h3 id="fld4">Date of birth:<br>
+                </h3>
+                <h3 id="fld5">Address:<br>
+                </h3>
+                <h3 id="fld10"></h3>
+                <h3 id="fld11"></h3>
+                <h3 id="fld12"></h3>
+                <h3 id="fld8">KYC document type:<br>
+                </h3>
+                <h3 id="fld9">KYC id number:<br>
+                </h3>  
+
+                <br><hr>
+                <!-- Take input for KYC document image in this form -->
+                <form id="#">
+                    <h4>Upload Your Selfie </h4>
+                    <input type="file" class="slct-img" accept="image/*" required><br><br>    
+                    <input type="submit" value="Upload" class="submit">
+                </form> 
+
+                <br>   
+                <hr>
+                <br><br>
+                
+                
+                <iframe src="kyc_details.html" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
+            
+              
+           <!-- <form> 
+                <progress value="0" id="uploader" max="100">0%</progress><br><br> 
+                
+                <input id="photo"class="file"type="file" name="mainimage"
+                                value="" onchange="getfile()"><br><br> 
+                 
+                <button id="submit_link"type="submit" name="button">Save</button> 
+                </form> -->
+                
+                <!-- <label class="upload-group">
+                    Upload KYC:<br>
+                    <input type="file" class="upload" id="file" accept="image/*">
+                </label>
+               <button type="button" class="uploadbutton" id="uploadButton" onclick="uploadFile()">SUBMIT</button> -->
+                      
         </div>
+
+
         <div class="footer">
             <div class="footer-cright">
                 <p>Copyright &#169 2020 Takshashila Lib. All rights reserved</p>
@@ -70,6 +124,10 @@
     
         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
     
+      <!--  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script> -->
+
+    
         <script src="js/profile4.js"></script>
+ 
     </body>
 </html>

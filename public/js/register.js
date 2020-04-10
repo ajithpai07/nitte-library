@@ -58,8 +58,14 @@ signupForm.addEventListener('submit',(e) =>{
               p2: p2,
               p3: p3,
               KYCtype: KYCtype,
-              Kycid: Kycid
+              Kycid: Kycid,
+              wallet:0
             });
+            setTimeout(function() {
+              alert("Successfully signed up");
+              location="9_clogin.html"
+            }, 5000);
+            
           }
           else{
             //no user signed in

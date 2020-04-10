@@ -23,7 +23,11 @@ auth.onAuthStateChanged(function(user) {
       const fd4=document.querySelector("#fd4");
       const fd5=document.querySelector("#fd5");
       const fd6=document.querySelector("#fd6");
-      
+      const fd7=document.querySelector("#fd7");
+      const fd8=document.querySelector("#fd8");
+      const fd9=document.querySelector("#fd9");
+      const fd10=document.querySelector("#fd10");    
+
       function render(doc){
 
         fd1.value=doc.data().name;
@@ -31,12 +35,17 @@ auth.onAuthStateChanged(function(user) {
         fd4.value=doc.data().p1;
         fd5.value=doc.data().p2;
         fd6.value=doc.data().p3;
+        fd7.value=doc.data().dno;
+        fd8.value=doc.data().strtname;
+        fd9.value=doc.data().City;
+        fd10.value=doc.data().pcode;
       }
 
       db.collection('Users').doc(user.uid).get().then(function(doc) {
         if(doc.exists) {
           console.log("data is ", doc.data());
           render(doc);
+          
         }
         else {
           console.log("no document");
@@ -56,17 +65,33 @@ auth.onAuthStateChanged(function(user) {
             const fd4=update['fd4'].value;
             const fd5=update['fd5'].value;
             const fd6=update['fd6'].value;
+            const fd7=update['fd7'].value;
+            const fd8=update['fd8'].value;
+            const fd9=update['fd9'].value;
+            const fd10=update['fd10'].value;
+            
 
             db.collection("Users").doc(user.uid).update({
                 name: fd1,
                 Dob: fd2,
                 p1: fd4,
                 p2: fd5,
-                p3: fd6
+                p3: fd6,
+                dno:fd7,
+                strtname:fd8,
+                City:fd9,
+                pcode:fd10
               });
 
         })
-    } else {
+        
+
+          // Move to a new location or you can do something else
+          
+  
+   
+    } 
+    else {
       // No user is signed in.
       console.log("not present");
       window.location="3_login.html";

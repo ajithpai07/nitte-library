@@ -3,16 +3,28 @@
     <head>
         <title>Booking</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/icon type" href="\logo_tbar.png">
+        <link rel="icon" type="image/icon type" href="logo_tbar.png">
         <link rel="stylesheet" href="css/css8.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>
+            $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+
     </head>
     <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
         <div class="header">
             <div class="header-logo">Takshashila Library</div>
         </div>
         <div class="main">
-            <p>Your account has created <span>successfully</span>. 
-            Please proceed to the login page by clicking on the button given below.</p>
+            <p>You have succesfully Signed up. You are now member of Takshashila library. Login for accessing your account.</p>
             <div class="wrapper">
                 <div class="link_wrapper">
                   <a href="3_login.html">Login</a>

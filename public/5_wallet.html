@@ -3,24 +3,85 @@
     <head>
         <title>Wallet</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/icon type" href="file:///C:/Users/Sravan%20Kumar/Desktop/takshashila-lib/logo_tbar.png">
+        <link rel="icon" type="image/icon type" href="logo_tbar.png">
         <link rel="stylesheet" href="css/css5.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>$(window).load(function(){$(".se-pre-con").fadeOut("slow");;});</script>
+        <!-- logout script -->
+        <script>
+          function logoutfunction() {
+            var r = confirm("Are you sure want to logout?");
+            if (r == true) {
+              window.location.href = "8_clogout.html";
+            }
+          }
+        </script>
+        <!-- logout script --> 
+
     </head>
     <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
         <div class="header">
             <div class="header-logo">Takshashila Library</div>
             <div class="header-menu">
                 <ul>
-                    <li><p href="#" class="button button3">Logout</p></li>
-                    <li><a href="#">Booking</a></li>
-                    <li class="active"><a href="#">Wallet</a></li>
-                    <li><a href="#">Profile management</a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a onclick="logoutfunction()" class="button3">Logout</a></li>
+                    <li><a href="6_cart.html">Booking</a></li>
+                    <li class="active"><a href="5_wallet.html">Wallet</a></li>
+                    <li><a href="4_2_profilem.html">Profile management</a></li>
+                    <li><a href="2_home.html">Home</a></li>
                 </ul>
             </div>
         </div>
         <div class="main">
-            
+          <div class="top">
+            <h1>Wallet</h1>
+            <h3 id="fld8">Total balance = <span>&#8377</span></h3>
+          </div>
+                 
+          <form id="card">
+            <div class="form-container">
+                <div class="card-front">
+                  <div class="shadow"></div>
+                    <div class="image-container">
+                      <span class="amount">Amount: &#8377 <strong><input type="number" id="fld1" required pattern="[0-9]{4}" max="2000" min="100" title="The amount must be in the range 100 to 2000"></strong></span>
+                      <span class="card-image"></span>
+                    </div>            
+                  <label for="card-number">Card Number</label>
+                  <input type="text" class="card-number" id="fld2" placeholder="1234 5678 9101 1112" length="16" required pattern="[0-9]{16}" title="Sorry, only numbers are allowed with length of 16 digits">
+                  <div class="cardholder-container">
+                    <label for="card-holder">Card Holder</label>
+                    <input type="text" class="card-holder" id="fld3" placeholder="e.g. John Doe" required pattern="[a-zA-Z|' ']{3,30}" title="Sorry, only letters and spaces are allowed with a length of 3-30 letters.">
+                  </div>
+                  <div class="exp-container">
+                    <label for="card-exp">Expiration</label>
+                    <input class="card-month" type="text" id="fld4" placeholder="MM" length="2" required pattern="(00|01|02|03|04|05|06|07|08|09|10|11|12)" title="Sorry, only numbers are allowed with exact length of 2 digits">
+                    <input class="card-year" type="text" id="fld5" placeholder="YY" length="2" required pattern="(2|3|4|5|6|7|8|9){1}[0-9]{1}" title="Sorry, only numbers are allowed with exact length of 2 digits">
+                  </div>
+                  <div class="cvc-container">
+                    <label for="card-cvc"> CVC/CVV</label>
+                    <input class="card-cvc" placeholder="XXX-X" id="fld6" type="password" min-length="3" max-length="4" required pattern="[0-9]{3}[0-9]?">
+                    <p>Last 3 or 4 digits</p>
+                  </div>                          
+                  <br>
+                  <br>
+                  <br>       
+                  <input type="checkbox" id="fld7"><a class="check">I want to save my card details.</a>                  
+                </div>
+                <div class="card-back">
+                  <div class="card-stripe">
+                  </div>         
+                </div>
+                <input type="submit" value="ADD" class="card-btn">                            
+              </div>
+            </form>   
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          
+          </div>
         </div>
         <div class="footer">
             <div class="footer-cright">
@@ -37,5 +98,12 @@
                 </address>
             </div>
         </div>
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+    
+      <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+    
+      <script src="js/wallet.js"></script>
     </body>
 </html>

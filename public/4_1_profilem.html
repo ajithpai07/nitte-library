@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Profile Management</title>
+        <title>Profile Management: Help</title>
         <meta charset="UTF-8">
         <link rel="icon" type="image/icon type" href="logo_tbar.png">
         <link rel="stylesheet" href="css/css4.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>
+            $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+        <!-- logout script -->
+        <script>
+            function logoutfunction() {
+              var r = confirm("Are you sure want to logout?");
+              if (r == true) {
+                window.location.href = "8_clogout.html";
+              }
+            }
+        </script>
+        <!-- logout script -->
+        
     </head>
     <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
         <div class="header">
             <div class="header-logo">Takshashila Library</div>
             <div class="header-menu">
                 <ul>
-                    <li><a href="logout.html" class="button button3">Logout</a></li>
-                    <li><a href="6_booking.html">Booking</a></li>
+                    <li><a onclick="logoutfunction()" class="button3">Logout</a></li>
+                    <li><a href="6_cart.html">Booking</a></li>
                     <li><a href="5_wallet.html">Wallet</a></li>
                     <li class="active"><a href="4_2_profilem.html">Profile management</a></li>
-                    <li><a href="2_home.html">Home</a></li>
+                    <li><a href="2_home.html">Help</a></li>
                 </ul>
             </div>
         </div>        
@@ -24,11 +47,11 @@
                 <a href="4_2_profilem.html">Show My Profile</a>
                 <a href="4_3_profilem.html">Update My Profile</a>
                 <a href="4_4_profilem.html">KYC Status</a>
-                <a href="4_1_profilem.html">Home</a>
+                <a href="4_1_profilem.html">Help</a>
             </div>                      
             <div class="main-profile">
                 <h2>Profile Management</h2><br><br>
-                <h3>Hello, </h3>
+                <h3 id="fld1">Hello, </h3>
                 <br>
                 <p>In "Profile Management", you can do the following operations:<br>
                 1. You can view the profile.<br>

@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Profile Management</title>
+        <title>Profile Management: Update</title>
         <meta charset="UTF-8">
         <link rel="icon" type="image/icon type" href="logo_tbar.png">
         <link rel="stylesheet" href="css/css4.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>
+            $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+        <!-- logout script -->
+        <script>
+            function logoutfunction() {
+              var r = confirm("Are you sure want to logout?");
+              if (r == true) {
+                window.location.href = "8_clogout.html";
+              }
+            }
+        </script>
+        <!-- logout script -->
+        
     </head>
     <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
         <div class="header">
             <div class="header-logo">Takshashila Library</div>
             <div class="header-menu">
                 <ul>
-                    <li><a href="logout.html" class="button button3">Logout</a></li>
-                    <li><a href="6_booking.html">Booking</a></li>
+                    <li><a onclick="logoutfunction()" class="button3">Logout</a></li>
+                    <li><a href="6_cart.html">Booking</a></li>
                     <li><a href="5_wallet.html">Wallet</a></li>
                     <li class="active"><a href="4_2_profilem.html">Profile management</a></li>
                     <li><a href="2_home.html">Home</a></li>
@@ -31,7 +54,7 @@
                 <form id="update">
                     <fieldset>
                       <label>Name</label>
-                      <input type="text" class="slct" value="" id="fd1" required>
+                      <input type="text" class="slct" value="" id="fd1" required pattern="[a-zA-Z|' ']{3,30}" title="Sorry, only letters and spaces are allowed with a maximum length of 3-30 letters.">
                       <label>Date Of Birth</label>
                       <input type="date" class="slct" id="fd2" value="" required>
                       <!-- <label>New Password</label>
@@ -51,6 +74,7 @@
                         </select>
                         <label>Preference - 2</label>
                         <select class="slct" id="fd5" value="">
+                            <option value="">-</option>
                             <option value="historical fiction">Historical fiction</option>
                             <option value="science fiction">Science fiction</option>
                             <option value="short story">Short story</option>
@@ -64,6 +88,7 @@
                         </select>
                         <label>Preference - 3</label>
                         <select class="slct" id="fd6" value="">
+                            <option value="">-</option>
                             <option value="historical fiction">Historical fiction</option>
                             <option value="science fiction">Science fiction</option>
                             <option value="short story">Short story</option>
@@ -75,15 +100,15 @@
                             <option value="drama">Drama</option>
                             <option value="art">Art</option>
                         </select>
-                      <!-- <label>Door No</label>
-                      <input type="text" class="slct" required>
+                      <label>Door/Flat number</label>
+                      <input type="text" class="slct" id="fd7" required pattern="[A-Za-z0-9]+[A-Za-z0-9|' '|-]*" title="Example: E-503, 1-808-1A.">
                       <label>Street name</label>
-                      <input type="text" class="slct" required>
+                      <input type="text" class="slct" id="fd8" required pattern="[A-Za-z0-9|' '|-]+" title="Example: Central Jail Road, John Street-1.">
                       <label>City</label>
-                      <input type="text" class="slct" required>
+                      <input type="text" class="slct" id="fd9" required pattern="[A-Za-z|' ']+" title="Sorry, only letters and spaces are allowed.">
                       <label>Postal code</label>
-                      <input type="text" class="slct" required> -->
-                    </fieldset>  
+                      <input type="text" class="slct" id="fd10" required pattern="[1-9]{1}[0-9]{5}" required title="Sorry, only 6 digits without spaces are allowed.">
+                    </fieldset>
                     <input type="submit" value="Update" class="submit">
                 </form>
             </div>
