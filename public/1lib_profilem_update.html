@@ -5,8 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/icon type" href="logo_tbar.png">
-        <link rel="stylesheet" href="css/1lib_home.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    </head>
+        <link rel="stylesheet" href="css/1lib_updatep.css">
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -42,11 +41,11 @@
                             <a>Books</a>
                             <div class="dropdown-content">
                               <a href="1lib_book_history.html">Books history</a>
-                              <a href="1lib_update_book.html">Update Books</a>
+                              <a href="1lib_manage_books.html">Manage Books</a>
                             </div>
                           </div> 
                     </li>
-                    <li><a href="#">KYC Verification</a></li>
+                    <li><a href="1lib_kyc_verify.html">KYC Verification</a></li>
                     <li>
                         <div class="dropdown">
                             <div class="activ">                                
@@ -63,33 +62,42 @@
             </div>
         </div>
         <div class="main">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <div class="show-profile" id="profile">
+            <h2>Update Profile</h2><br>
+            <img src="lib_update_1.png">
+          </div>
+          <form id="update">
+            <fieldset>
+              <h3 id="fd7"></h3>
+              <input placeholder="Name" type="text" class="slct" value="" id="fd1" required pattern="[a-zA-Z|' ']{3,30}" title="Sorry, only letters and spaces are allowed with a maximum length of 3-30 letters." autofocus>
+              <input placeholder="Date of birth" type="date" class="slct" id="fd2" value="" required>
+              <input placeholder="Door/Flat number" type="text" class="slct" id="fd3" required pattern="[A-Za-z0-9]+[A-Za-z0-9|' '|-]*" title="Example: E-503, 1-808-1A.">
+              <input placeholder="Street name" type="text" class="slct" id="fd4" required pattern="[A-Za-z0-9|' '|-]+" title="Example: Central Jail Road, John Street-1.">
+              <input placeholder="City" type="text" class="slct" id="fd5" required pattern="[A-Za-z|' ']+" title="Sorry, only letters and spaces are allowed.">
+              <input placeholder="Postal code" type="text" class="slct" id="fd6" required pattern="[1-9]{1}[0-9]{5}" required title="Sorry, only 6 digits without spaces are allowed.">
+              <input type="submit" value="Update" class="submit">
+            </fieldset>
+          </form>
         </div>
+         
         <div class="footer">
             <div class="footer-cright">
-                <p>Copyright &#169 2020 Takshashila Lib. All rights reserved</p>
+                <p>&#169 2020 Takshashila Library. All rights reserved</p>
             </div>
-            <div class="footer-menu">
-                <address>
-                    Contact us at:<br>
-                    takshashila.lib@bl.edu<br>
-                    Amrita Vishwa Vidyapeetham, Kasavanahalli<br>
-                    Bengaluru-560035<br>
-                    Karnataka<br>
-                    India<br>
-                </address>
+            <div class="footer-left">
+              <pre class="footer-links">
+                <a href="0_about.html" class="link-1" target='_blank'>About   </a> <a href="0_faqs.html" target='_blank'>   FAQ's   </a> <a href="0_customer_support.html" target='_blank'>   Customer Support   </a> <a href="0_privacy_policy.html" target='_blank'>   Privacy Policy   </a> <a href="0_terms.html" target='_blank'>   Terms of Service   </a>
+              </pre>
             </div>
         </div>
 
-            <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
-            <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+    
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
 
-            <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
-
-            <script src="js/home.js"></script>
+        <script src="js/lib_updatep.js"></script>
+    
     </body>
 </html>

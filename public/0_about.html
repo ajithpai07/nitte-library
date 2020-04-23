@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About | TL</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/icon type" href="logo_tbar.png">    
+
+        <style>
+
+            /* Create three equal columns that floats next to each other */
+            .column {
+                margin-left: 65px;
+                align-items: center;
+                float: left;
+                width: 25%;
+                padding: 10px;
+                height: 250px; /* Should be removed. Only for demonstration */
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                left: 0;
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script>
+            $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+
+        <style>
+            body {
+                overflow: hidden;
+                user-select: none;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: rgba(139, 86, 155, 0.253);
+                color: black;
+                padding: 0px;
+                margin:0px;
+            }
+
+            .example {
+                height: 500px;
+                overflow-y: scroll; /* Add the ability to scroll */
+            }
+        
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .example::-webkit-scrollbar {
+                display: none;
+            }
+            
+            /* Hide scrollbar for IE and Edge */
+            .example {
+                -ms-overflow-style: none;
+            }
+
+            /* Loader icon */
+            .no-js #loader { display: none;  }
+            .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+            .se-pre-con {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                transition: 100s;
+                background: url(css/load1.gif) center no-repeat black;
+            }
+            /* Loader icon */
+
+            .header {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
+                background-color: black;
+                width: auto;
+                color: rgb(139, 86, 155);
+                height: 90px;
+                border: 4px solid black; 
+            }
+            
+            .header-logo {
+                font-weight: bolder;
+                float: left;
+                font-size: 36px;
+                padding: 20px 40px;
+            }
+            
+            .main {
+                padding: 30px;
+                text-align: justify;
+                scroll-behavior: smooth;
+            }
+            hr{
+                color: black;
+                height: 5px;
+                z-index: 1;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <!-- Loader icon -->
+        <div class="se-pre-con"></div>
+        <!-- Loader icon -->
+        <div class="header">
+            <div class="header-logo">Takshashila Library</div>
+        </div>
+        <div class="main example">
+          <h2 align="center">About Takshashila Library</h2>
+          <p>  Takshashila Library is Software project developed for handling all the system needs for the Library management.
+               The main purpose of this project is to maintain easy circulation system using computers and to provide different reports.<br>
+               The purpose of this software development project is to create a new application called: LIBRARY MANAGEMENT SYSTEM. The client for this project wishes to enter the PC-based internet environment. The Library Management System will be PC-base with internet, allowing library users to search for books, view previously borrowed book, manage wallet, extend currently borrowed booking and library staff members to manage the book inventory and user database. The application will provide the following capabilities: 
+<br>
+               The application will be access via internet on a PC/Mobile at any place.<br> 
+               User will be able to manage library user accounts including updating details, extend the booking of currently held book, adding and viewing balance in wallet and also view previous borrowed book details. Library staff will be able to manage the book inventory database including remove, change, and add.
+               <br>The application will provide search function on books based on genre, title, author, year. <br>
+               
+                The project's client has determined that this application will provide the following benefits:<br>
+                    • Provide additional flexibility and convenience to the library users. <br>
+                    • Provide better reliability and security of the library information. <br>
+                    • Provide a more productive environment for the library staff member. <br>
+                    • Reduce the cost of the library operations. <br>
+               The availability of information at any time in any place.<br>
+               The Online Library System is a package to be used by libraries to improve the efficiency of Library, Library employees and users. The Online Library System to be developed benefits the members and the Librarian of institute greatly. The system provides books catalog and information to members and helps them decide on the books to borrow from the library. The Librarian can keep the books catalog updated all the time so that the members get the updated information all the time.
+               <br>
+          </p>
+          <hr>
+          <h2 align="center">Developers</h2>
+            <div class="row">
+                <div class="column" style="background-color: transparent;">
+                    <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="mahima-shenoy-3249ba189"><a class="LI-simple-link" href='https://in.linkedin.com/in/mahima-shenoy-3249ba189?trk=profile-badge'>Mahima Shenoy</a></div>
+                </div>
+                <div class="column" style="background-color: transparent;">
+                    <div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="maithri-suresh-0184a718a"><a class="LI-simple-link" href='https://in.linkedin.com/in/maithri-suresh-0184a718a?trk=profile-badge'>Maithri Suresh</a></div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    </body>
+</html>

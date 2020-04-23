@@ -6,8 +6,8 @@ var firebaseConfig = {
   projectId: "nitte-library",
   storageBucket: "nitte-library.appspot.com",
   messagingSenderId: "481374096861",
-  appId: "1:481374096861:web:6714dbe0762969f8eb3a34",
-  measurementId: "G-EGE2DG4WD6"
+  appId: "1:481374096861:web:ab0839a2356a5141eb3a34",
+  measurementId: "G-Z0TSG9RJEB"
   };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -34,6 +34,7 @@ signupForm.addEventListener('submit',(e) =>{
   const p3=signupForm['p3'].value;
   const KYCtype=signupForm['KYCtype'].value;
   const Kycid=signupForm['Kycid'].value;
+  const pending="pending";
   // const Kycimg=signupForm['Kycimg'].value;
   
   auth.createUserWithEmailAndPassword(email, password).then(cred =>{
@@ -59,7 +60,9 @@ signupForm.addEventListener('submit',(e) =>{
               p3: p3,
               KYCtype: KYCtype,
               Kycid: Kycid,
-              wallet:0
+              Kycstatus: "Pending",
+              wallet:0,
+              role: "customer"
             });
             setTimeout(function() {
               alert("Successfully signed up");

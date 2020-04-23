@@ -5,8 +5,8 @@ var firebaseConfig = {
   projectId: "nitte-library",
   storageBucket: "nitte-library.appspot.com",
   messagingSenderId: "481374096861",
-  appId: "1:481374096861:web:6714dbe0762969f8eb3a34",
-  measurementId: "G-EGE2DG4WD6"
+  appId: "1:481374096861:web:ab0839a2356a5141eb3a34",
+  measurementId: "G-Z0TSG9RJEB"
     };
     // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -26,10 +26,33 @@ loginForm.addEventListener('submit',(e) =>{
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // User is signed in. 
-            alert("login successful");
-            window.location="2_home.html";
+            db.collection('Users').doc(user.uid).get().then(function(doc) {
+              if(doc.exists) {
+                console.log("data is ", doc.data());
+                if(doc.data().role=="customer"){
+                  alert("login successful");
+                  window.location="2_home.html";
+                }
+                else{
+                  if(doc.data().role=="admin"){
+                    alert("login successful");
+                    window.location="1lib_home.html";
+                  }
+                  else{
+                    alert("login unsuccessful");
+                  }
+                }
+              }
+              else {
+                console.log("no document");
+              }
+            })
+              .catch(function(error) {
+                console.log("error"+error);
+              });
           } else {
             // No user is signed in.
+            console.log("no user is signed in");
           }
         });
        
