@@ -7,7 +7,7 @@ var firebaseConfig = {
   messagingSenderId: "481374096861",
   appId: "1:481374096861:web:ab0839a2356a5141eb3a34",
   measurementId: "G-Z0TSG9RJEB"
-    };
+};
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   
@@ -15,6 +15,7 @@ var firebaseConfig = {
   const auth=firebase.auth();
 //logout 
 auth.signOut().then(() =>{
+        firebase.auth().signOut();
         console.log('user is signed out');
         // alert('You are now logged out');
         // window.location="8_clogin.html";

@@ -8,12 +8,13 @@ var firebaseConfig = {
   messagingSenderId: "481374096861",
   appId: "1:481374096861:web:ab0839a2356a5141eb3a34",
   measurementId: "G-Z0TSG9RJEB"
-  };
+};
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 const db=firebase.firestore();
 const auth=firebase.auth();
+const ref = firebase.storage().ref();
 
 const signupForm=document.querySelector("#Register");
 
@@ -34,8 +35,7 @@ signupForm.addEventListener('submit',(e) =>{
   const p3=signupForm['p3'].value;
   const KYCtype=signupForm['KYCtype'].value;
   const Kycid=signupForm['Kycid'].value;
-  const pending="pending";
-  // const Kycimg=signupForm['Kycimg'].value;
+  let url1;
   
   auth.createUserWithEmailAndPassword(email, password).then(cred =>{
     //signing user in
@@ -45,6 +45,19 @@ signupForm.addEventListener('submit',(e) =>{
           if (user) {
             // User is signed in.
             const userId=user.uid;
+
+            const file=document.querySelector("#Kycimg").files[0];
+            
+            const p_name=new Date()+'-'+file.name;
+
+            const metadata ={
+              contentType:file.type
+            }
+
+            const task=ref.child(p_name).put(file,metadata);
+
+            task.then(snapshot => snapshot.ref.getDownloadURL()).then(url => { url1 = url}).then(function() {remverr()});
+            function remverr(){
             db.collection('Users').doc(userId).set({
               name: name,
               Dob: Dob,
@@ -60,15 +73,18 @@ signupForm.addEventListener('submit',(e) =>{
               p3: p3,
               KYCtype: KYCtype,
               Kycid: Kycid,
-              Kycstatus: "Pending",
+              Kycstatus: "UPending",
+              proimg: url1,
               wallet:0,
-              role: "customer"
-            });
-            setTimeout(function() {
-              alert("Successfully signed up");
-              location="9_clogin.html"
-            }, 5000);
+              role: "customer",
+              saved: 0
+            }).then(function() {remverr2();});
             
+          }
+            function remverr2(){
+              alert("Successfully created your account!");
+              window.location="9_clogin.html";
+            }
           }
           else{
             //no user signed in

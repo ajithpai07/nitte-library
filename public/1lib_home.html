@@ -4,7 +4,7 @@
         <title>Lib | Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/icon type" href="logo_tbar.png">
+        <link rel="icon" type="image/icon type" href="assets/logo_tbar.png">
         <link rel="stylesheet" href="css/1lib_home.css">
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -33,7 +33,7 @@
         <!-- Loader icon -->
         <br><br><br><br><br><br>
         <div class="start">
-            <img src="logo_tbar.png">
+            <img src="assets/logo_tbar.png">
             <h9>
                 Takshashila Library
             </h9>
@@ -48,12 +48,22 @@
                         <div class="dropdown">                            
                             <a>Books</a>
                             <div class="dropdown-content">
-                              <a href="1lib_book_history.html">Books history</a>
+                              <a href="1lib_book_show.html">Show books</a>
                               <a href="1lib_manage_books.html">Manage Books</a>
+                              <a href="1lib_bookings.html">Bookings</a>
                             </div>
                           </div> 
                     </li>
-                    <li><a href="1lib_kyc_verify.html">KYC Verification</a></li>
+                    <li>
+                          <div class="dropdown">                            
+                            <a>User management</a>
+                            <div class="dropdown-content">
+                              <a href="1lib_kyc_verify.html">KYC Verification</a>
+                              <a href="1lib_cust_req.html">Customer Requests</a>
+                              <a href="1lib_reviews.html">Customer Reviews</a>
+                            </div>
+                          </div>
+                    </li>
                     <li>
                         <div class="dropdown">                            
                             <a>Profile management</a>
@@ -86,7 +96,7 @@
 
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
         // Load google charts
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -100,20 +110,18 @@
           ]);
 
           var book_data = google.visualization.arrayToDataTable([
-          ['Task', 'All details about books in Library'],
-          ['Total books', 8],
-          ['Books expired', 2],
-          ['Books issued', 6],          
-          ['Books returned', 6]
+          ['Task', 'Count'],
+          ['Books available', 40],
+          ['Books removed', 1]
           ]);
 
           var genre_data = google.visualization.arrayToDataTable([
           ['Task', 'Count of books with their categories'],
           ['Art', 4],
-          ['Music', 4],
+          ['Music', 0],
           ['Poetry', 4],
           ['Humour', 4],
-          ['Fantasy', 4],
+          ['Fantasy', 0],
           ['Business', 4],
           ['Biography', 4],
           ['Cookbooks', 4],
@@ -130,12 +138,12 @@
           // Display the chart inside the <div> element with id="piechart"
           var chart = new google.visualization.PieChart(document.getElementById('user-details1'));
           chart.draw(user_data1, user1);
-          var chart = new google.visualization.PieChart(document.getElementById('book-details'));
+          var chart = new google.visualization.BarChart(document.getElementById('book-details'));
           chart.draw(book_data, book);
           var chart = new google.visualization.PieChart(document.getElementById('book-genres'));
           chart.draw(genre_data, genre);
         }
-        </script>
+        </script> -->
 
 
 
@@ -145,6 +153,6 @@
 
             <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
 
-            <script src="js/home.js"></script>
+            <script src="js/libHome.js"></script>
     </body>
 </html>

@@ -3,7 +3,7 @@
     <head>
         <title>Booking: Cart</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/icon type" href="logo_tbar.png">
+        <link rel="icon" type="image/icon type" href="assets/logo_tbar.png">
         <link rel="stylesheet" href="css/css6_cart.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -35,7 +35,7 @@
             <div class="header-menu">
                 <ul>
                     <li><a onclick="logoutfunction()" class="button3">Logout</a></li>
-                    <li class="active"><a href="6_cart.html">Booking</a></li>
+                    <li class="active"><a href="6_newbooking.html">Booking</a></li>
                     <li><a href="5_wallet.html">Wallet</a></li>
                     <li><a href="4_2_profilem.html">Profile management</a></li>
                     <li><a href="2_home.html">Home</a></li>
@@ -47,70 +47,33 @@
                 <a href="6_cart.html">Cart</a>
                 <a href="6_newbooking.html">New booking</a>
                 <a href="6_prevbooking.html">Previous bookings</a>
-                <a href="6_bookowed.html">Book owed</a>
+                <!-- <a href="6_bookowed.html">Book owed</a> -->
             </div> 
             <div class="main-cart">
                 <h2>Cart</h2>
             </div>     
-            <a href="#" class="checkout" style="vertical-align:middle"><span>CHECKOUT </span></a>
-            <br><br><br><br><br>
+            <h3 class="tprice" title="Booking fee = ₹2/book" id="totall">&ensp;Total price = ₹ </h3><br>
+            <br><br><br><br>
                 <table>
                     <thead>
                     <tr class="red">
-                        <th>Booking ID</th>
+                        <th>Book ID</th>
                         <th>Book name</th>
                         <th>Book price</th>
-                        <th>Quantity</th>
                         <th>Remove</th>
+                        <th>Checkout</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>Lorem.</td>
-                        <td>Ullam.</td>
-                        <td>Vel.</td>
-                        <td>1</td>
-                        <td><button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Quas!</td>
-                        <td>Velit.</td>
-                        <td>Quisquam?</td>
-                        <td>1</td>
-                        <td><button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Voluptates!</td>
-                        <td>Fugiat?</td>
-                        <td>Alias.</td>
-                        <td>1</td>
-                        <td><button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Maiores.</td>
-                        <td>Ab.</td>
-                        <td>Accusantium.</td>
-                        <td>1</td>
-                        <td><button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Hic.</td>
-                        <td>Id!</td>
-                        <td>Officiis.</td>
-                        <td>1</td>
-                        <td><button>Delete</button></td>
-                    </tr>
-                    <tr>
-                        <td>Soluta.</td>
-                        <td>Ad!</td>
-                        <td>Impedit.</td>
-                        <td>1</td>
-                        <td><button>Delete</button></td>
-                    </tr>
+                    <tbody id="tabbody">
+
+
+                        <!-- Add JavaScript from the below tags -->
+                    
+                        <!--End here-->
+
                     </tbody>
                 </table>                 
             <br><br>
-            <a href="#" class="checkout" style="vertical-align:middle"><span>CHECKOUT </span></a>
         </div>
         <div class="footer">
             <div class="footer-cright">
@@ -129,6 +92,6 @@
       
         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
       
-        <script src="js/booking.js"></script>
+        <script src="js/cart.js"></script>
     </body>
 </html>

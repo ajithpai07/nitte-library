@@ -3,7 +3,7 @@
     <head>
         <title>Profile Management: KYC</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/icon type" href="logo_tbar.png">
+        <link rel="icon" type="image/icon type" href="assets/logo_tbar.png">
         <link rel="stylesheet" href="css/css4kyc.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -35,7 +35,7 @@
             <div class="header-menu">
                 <ul>
                     <li><a onclick="logoutfunction()" class="button3">Logout</a></li>
-                    <li><a href="6_cart.html">Booking</a></li>
+                    <li><a href="6_newbooking.html">Booking</a></li>
                     <li><a href="5_wallet.html">Wallet</a></li>
                     <li class="active"><a href="4_2_profilem.html">Profile management</a></li>
                     <li><a href="2_home.html">Home</a></li>
@@ -52,10 +52,11 @@
             <div class="show-profile" id="profile">
                 <h2>KYC Status</h2>    
 
-                <h5>Status: <span>Pending</span></h5> 
+                <h5>Status: <span id="Kycstatus"></span></h5> 
                 
                 <hr>
-               
+                
+                <h3 class="ppict" id="fld9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Profile picture <br><br><img class="ppic" id="image"></h3>
                 <h3 id="fld1">Name &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;: &emsp;&emsp;</h3>
                 <h3 id="fld2">Date of birth&emsp;&emsp;&emsp;&emsp;&ensp; &nbsp;: &emsp;&emsp;</h3>
                 <h3 id="fld3">Door/Flat number &emsp;&emsp;&ensp;: &emsp;&emsp;</h3>
@@ -64,14 +65,16 @@
                 <h3 id="fld6">Postal code &emsp;&emsp;&emsp;&emsp;&emsp;&ensp;: &emsp;&emsp;</h3>
                 <h3 id="fld7">KYC document type &emsp;&ensp;&nbsp;: &emsp;&emsp;</h3>
                 <h3 id="fld8">KYC id number &emsp;&ensp;&nbsp;&emsp;&ensp;&ensp;&nbsp;: &emsp;&emsp;</h3>           
-
-                <br><hr>
+                <br>
+                <div id="appear">
+                <hr>
                 <!-- Take input for KYC document image in this form -->
-                <form id="#">
+                <h3 id="fld12" style="color: red"></h3>
+                <form id="UploadKYC">
                     <h4>Upload KYC front </h4>
-                    <input type="file" class="slct-img" accept="image/*" required>
+                    <input type="file" class="slct-img" id="KYCfront" accept="image/*" required>
                     <h4>Upload KYC back </h4>
-                    <input type="file" class="slct-img" accept="image/*" required><br><br>
+                    <input type="file" class="slct-img" id="KYCback" accept="image/*" required><br><br>
 
                     <input type="submit" value="Upload" class="submit">   
                     <h9>*Please check the details above before uploading KYC document</h9><br>
@@ -100,7 +103,7 @@
                     <input type="file" class="upload" id="file" accept="image/*">
                 </label>
                <button type="button" class="uploadbutton" id="uploadButton" onclick="uploadFile()">SUBMIT</button> -->
-                      
+            </div>     
         </div>
 
 
@@ -120,7 +123,7 @@
     
         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
     
-        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-storage.js"></script>
     
         <script src="js/profile4.js"></script>
  
