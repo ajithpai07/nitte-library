@@ -139,7 +139,7 @@ auth.onAuthStateChanged(function(user) {
     .then(function() {
         db.collection('Books').get().then((snapshot) => {
             snapshot.docs.forEach(doc => {
-                if(doc.id != "APeHpv6rzI8vRTeF8gPj" && doc.data().bavial==1){
+                if(doc.id != "qqm4Qel5FDngab6SrNWH" && doc.data().bavial==1){
                     if(doc.data().bname==search){
                         render(doc);
                     }

@@ -46,13 +46,13 @@ auth.onAuthStateChanged(function(user) {
             db.collection('Books').get().then((snapshot) => {
                 snapshot.docs.forEach(doc => {
                     totalb = totalb+1;
-                    if(doc.id != "APeHpv6rzI8vRTeF8gPj" && doc.data().bavial==1){
+                    if(doc.id != "qqm4Qel5FDngab6SrNWH" && doc.data().bavial==1){
                         cavail = cavail+1;
                     }
                 }) 
             })
             .then(function() {
-                db.collection('Books').doc("APeHpv6rzI8vRTeF8gPj").get().then((doc) =>{
+                db.collection('Books').doc("qqm4Qel5FDngab6SrNWH").get().then((doc) =>{
                     a=doc.data().Art;
                     m=doc.data().Music;
                     p=doc.data().Poetry;

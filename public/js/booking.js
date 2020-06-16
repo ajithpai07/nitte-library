@@ -24,7 +24,7 @@ auth.onAuthStateChanged(function(user) {
     var KYCstatus;
 
     function render(doc){
-      if(doc.id != "APeHpv6rzI8vRTeF8gPj" && doc.data().bavial==1){
+      if(doc.id != "qqm4Qel5FDngab6SrNWH" && doc.data().bavial==1){
       const fld1 = document.createElement('li');      
       const fld2 = document.createElement('div');
       const fld3 = document.createElement('p');

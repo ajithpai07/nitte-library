@@ -22,7 +22,7 @@ auth.onAuthStateChanged(function(user) {
     const ulmain=document.querySelector("#ulmain");
 
     function render(doc){
-      if(doc.id != "APeHpv6rzI8vRTeF8gPj"){
+      if(doc.id != "qqm4Qel5FDngab6SrNWH"){
       const fld1 = document.createElement('li');      
       const fld2 = document.createElement('div');
       const fld3 = document.createElement('p');

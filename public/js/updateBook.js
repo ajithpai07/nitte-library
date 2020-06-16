@@ -204,7 +204,7 @@ auth.onAuthStateChanged(function(user) {
                 bprice: fd6
             })
             .then(function() {
-                db.collection('Books').doc("APeHpv6rzI8vRTeF8gPj").get().then(function(doc) {
+                db.collection('Books').doc("qqm4Qel5FDngab6SrNWH").get().then(function(doc) {
                     if(doc.exists) {
                         a0 = a0+b0+doc.data().Art;
                         a1 = a1+b1+doc.data().Music;                    
@@ -223,7 +223,7 @@ auth.onAuthStateChanged(function(user) {
                     }
                 })
                 .then(function() {
-                    db.collection("Books").doc("APeHpv6rzI8vRTeF8gPj").update({
+                    db.collection("Books").doc("qqm4Qel5FDngab6SrNWH").update({
                         Art: a0,
                         Music: a1,
                         Poetry: a2,

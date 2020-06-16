@@ -96,7 +96,7 @@ auth.onAuthStateChanged(function(user) {
             task.then(snapshot => snapshot.ref.getDownloadURL()).then(url => { url1 = url; remverr();});
             
             function remverr2(){
-                db.collection("Books").doc("APeHpv6rzI8vRTeF8gPj").update({
+                db.collection("Books").doc("qqm4Qel5FDngab6SrNWH").update({
                     count: count,
                     Art: a0,
                     Music: a1,
@@ -111,7 +111,7 @@ auth.onAuthStateChanged(function(user) {
                 }).then(function() {window.location="book_add.html";});
             }
             function remverr(){
-            db.collection('Books').doc("APeHpv6rzI8vRTeF8gPj").get().then(function(doc) {
+            db.collection('Books').doc("qqm4Qel5FDngab6SrNWH").get().then(function(doc) {
                 if(doc.exists) {
                     console.log("data is ", doc.data());
                     count = doc.data().count; 
